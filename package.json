@@ -1,0 +1,17 @@
+{
+  "name": "loja-virtual",
+  "version": "1.0.0",
+  "description": "Api de teste em Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/server.js"
+  },
+  "author": "Josias",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.1",
+    "nodemon": "^1.18.11"
+  }
+}
