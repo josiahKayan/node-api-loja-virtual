@@ -1,7 +1,7 @@
 const app = require('../src/app');
 const http = require('http');
 
-const port = normalizePort(3000);
+const port = normalizePort(process.env.PORT || 3000 );
 // const port = normalizePort(process.env.PORT || '3000');
 
 app.set('port',port);
@@ -16,7 +16,15 @@ server.on('listening', onListening);
 console.log('API rodando na porta '+port);
 
 function normalizePort(val){
-    return val;
+    
+    try{
+        val = val + 1;
+        return val -1 ;
+    }
+    catch(err){
+        return val;
+    }
+    
 }
 
 function onError(error){
