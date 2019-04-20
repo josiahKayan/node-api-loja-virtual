@@ -1,1 +1,1 @@
-node .\bin\server.js
+npm start
