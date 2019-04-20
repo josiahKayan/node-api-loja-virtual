@@ -1,1 +1,1 @@
-web: yarn start
+node .\bin\server.js
