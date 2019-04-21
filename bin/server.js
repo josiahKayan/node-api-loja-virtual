@@ -1,12 +1,21 @@
 const app = require('../src/app');
 const http = require('http');
+const serveStatic = require('serve-static');
 
-const port = normalizePort(process.env.PORT || 3000 );
-// const port = normalizePort(process.env.PORT || '3000');
+const port = 0;
+// const port = normalizePort(process.env.PORT || 3000 );;
 
 app.set('port',port);
 
+// app.use(serveStatic(__dirname + client));
+
 const server = http.createServer(app);
+
+// var validAddr = function(addr) {
+// 	var port = Number(addr.split(':')[1]);
+// 	return port > 0 && port < 65535;
+// };
+ 
 
 server.listen(port);
 
