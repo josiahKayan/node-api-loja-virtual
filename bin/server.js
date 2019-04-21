@@ -2,8 +2,8 @@ const app = require('../src/app');
 const http = require('http');
 const serveStatic = require('serve-static');
 
-const port = 0;
-// const port = normalizePort(process.env.PORT || 3000 );;
+// const port = 0;
+const port = normalizePort(process.env.PORT || 3000 );;
 
 app.set('port',port);
 
@@ -11,10 +11,7 @@ app.set('port',port);
 
 const server = http.createServer(app);
 
-// var validAddr = function(addr) {
-// 	var port = Number(addr.split(':')[1]);
-// 	return port > 0 && port < 65535;
-// };
+
  
 
 server.listen(port);
@@ -25,13 +22,17 @@ server.on('listening', onListening);
 console.log('API rodando na porta '+port);
 
 function normalizePort(val){
-    
+
+    // var validAddr = function(addr) {
+// 	var port = Number(addr.split(':')[1]);
+// 	return port > 0 && port < 65535;
+// };
+
     try{
-        val = val + 1;
-        return val -1 ;
+        return val > 0 && val < 65535;
     }
     catch(err){
-        return val;
+        return 0;
     }
     
 }
@@ -67,3 +68,8 @@ function onListening(){
         : 'port ' + addr.port ;
 
 }
+
+// var validAddr = function(addr) {
+// 	var port = Number(addr.split(':')[1]);
+// 	return port > 0 && port < 65535;
+// };
