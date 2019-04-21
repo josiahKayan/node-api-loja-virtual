@@ -17,14 +17,14 @@ app.use(function(req,res,next){
 const Product = require('./models/product');
 
 //Carrega as Rotas
-// const indexRoute = require('./routes/index-route');
+const indexRoute = require('./routes/index-route');
 const productRoute = require('./routes/product-route');
 
 //BODY PARSER
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-//app.use('/',indexRoute);
+app.use('/',indexRoute);
 app.use('/products',productRoute);
 
 
