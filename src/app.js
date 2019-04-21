@@ -24,7 +24,15 @@ const productRoute = require('./routes/product-route');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
-app.use('/',indexRoute);
+
+app.get('/', (req,res,next)=>{
+
+        res.status(200).send({
+            title: "Node Store API",
+            version: "0.0.2"
+        });
+});
+
 app.use('/products',productRoute);
 
 

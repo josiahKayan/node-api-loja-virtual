@@ -29,7 +29,12 @@ function normalizePort(val){
 // };
 
     try{
-        return val > 0 && val < 65535;
+        if( val > 0 && val < 65535){
+            return val ;
+        }
+        else{
+            return 0;
+        }
     }
     catch(err){
         return 0;
